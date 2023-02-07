@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="billing_page.css" />
+    <title>grid pratice</title>
+  </head>
+  <body style="background-color: rgba(234, 237, 247, 255)">
+    <!-- price -->
+    <div id="price" class="hidden printhidden">Total Price: $0.00</div>
+    <!-- values -->
+
+    <div id="values">
+      <table>
+        <tr>
+          <th class="table-item">Item</th>
+          <th class="table-quantity">Quantity</th>
+          <th class="table-unitprice">Unit Price</th>
+          <th class="table-totalprice" id="tprice">Total Price</th>
+        </tr>
+      </table>
+    </div>
+    <!-- content -->
+    <div id="content">
+      <table></table>
+      <div id="billing"></div>
+    </div>
+    <!-- snacks -->
+    <div id="snacks" class="hidden" style="border: none">
+      <img src="up.png" alt="" srcset="" id="up" />
+      <div id="snack-list" class="snack-list" style="border: none">
+        <!-- <p class="snack-item">Streamed Bun</p>
+        <p class="snack-item">Streamed Timsum</p>
+        <p class="snack-item">Deep Fry Timsum</p>
+        <p class="snack-item">Bake</p>
+        <p class="snack-item">Noodle/ Dumplings</p>
+        <p class="snack-item">Porridge</p>
+        <p class="snack-item">Beverage</p>
+        <p class="snack-item">FryTimsum</p>
+        <p class="snack-item">Dumplings</p>
+        <p class="snack-item">Timsum</p>
+        <p class="snack-item">Cake</p>
+        <p class="snack-item">Chips</p>
+        <p class="snack-item">Slice Cake</p> -->
+        <table>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+          <tr>
+            <td class="drink"></td>
+          </tr>
+        </table>
+      </div>
+      <img src="down.png" alt="" id="down" />
+    </div>
+    <!-- images -->
+    <div id="images" class="hidden">
+      <table>
+        <!-- 1st row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Coffee Black</p>
+            <img src="/images/coffee_black.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Tea Black</p>
+            <img src="/images/tea_black.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Chrysanthemum Tea</p>
+            <img src="/images/chrysanthemum_tea.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Coffee</p>
+            <img src="/images/coffee.png" alt="" /> -->
+          </td>
+        </tr>
+        <!-- second row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Tea</p>
+            <img src="/images/tea.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Chinese Tea</p>
+            <img src="/images/chinese_tea.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Iced Coffee Black</p>
+            <img src="/images/iced_coffee_black.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Iced Tea Black</p>
+            <img src="/images/iced_tea_black.png" alt="" /> -->
+          </td>
+        </tr>
+        <!-- third row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Soya Milk</p>
+            <img src="/images/soya_milk.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Iced Coffee</p>
+            <img src="/images/iced_coffee.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Iced Tea</p>
+            <img src="/images/iced_tea.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Grass Jelly</p>
+            <img src="/images/grass_jelly.png" alt="" /> -->
+          </td>
+        </tr>
+        <!-- fourth row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Coffee c</p>
+            <img src="/images/coffee_c.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Tea C</p>
+            <img src="/images/tea_c.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Black White</p>
+            <img src="/images/black_white.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Milo</p>
+            <img src="/images/milo.png" alt="" /> -->
+          </td>
+        </tr>
+        <!-- fifth row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Iced Milo</p>
+            <img src="/images/iced_milo.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Water</p>
+            <img src="/images/water.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Tea</p>
+            <img src="/images/tea.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Chinese Tea</p>
+            <img src="/images/chinese_tea.png" alt="" /> -->
+          </td>
+        </tr>
+        <!-- sixth row -->
+        <tr>
+          <td class="img">
+            <!-- <p>Iced Coffee Black</p>
+            <img src="/images/iced_coffee_black.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Iced Tea Black</p>
+            <img src="/images/iced_tea_black.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Soya Milk</p>
+            <img src="/images/soya_milk.png" alt="" /> -->
+          </td>
+          <td class="img">
+            <!-- <p>Coffee</p>
+            <img src="/images/coffee.png" alt="" /> -->
+          </td>
+        </tr>
+      </table>
+    </div>
+    <!-- display -->
+    <div id="display" class="hidden">
+      <section class="display-item-number">
+        <p id="item-number">Item Number</p>
+        <input id="input-item-number" type="number" />
+      </section>
+      <section class="display-quantity">
+        <p id="quantity">Quantity</p>
+        <input id="input-quantity" type="number" />
+      </section>
+      <section class="display-button">
+        <input type="button" value="Add" id="display-add" />
+      </section>
+    </div>
+    <!-- calculation -->
+    <div id="calculation" class="hidden">
+      <!-- language -->
+      <div id="language">
+        <!-- calc-language -->
+        <br />
+        <div id="calc-language">
+          <input type="button" value="Language" id="calc-language-lan" />
+          <br />
+          <br />
+          <label for="" id="calc-language-table">Table No</label>
+          <br />
+          <input type="number" id="calc-language-in1" />
+          <br />
+          <br />
+          <label for="" id="calc-language-cover">No of Cover</label>
+          <br />
+          <input type="number" id="calc-language-in2" />
+        </div>
+      </div>
+      <!-- numbers -->
+      <div id="numbers">
+        <!-- 7,8,9 -->
+        <div id="num-div1">
+          <br />
+          <button class="num-btn">7</button>
+          <button class="num-btn space">8</button>
+          <button class="num-btn space">9</button>
+        </div>
+        <!-- 4,5,6 -->
+        <div id="num-div2">
+          <button class="num-btn">4</button>
+          <button class="num-btn space">5</button>
+          <button class="num-btn space">6</button>
+        </div>
+        <!-- 1,2,3 -->
+        <div id="num-div3">
+          <button class="num-btn">1</button>
+          <button class="num-btn space">2</button>
+          <button class="num-btn space">3</button>
+        </div>
+        <!-- 0,.,- -->
+        <div id="num-div4">
+          <button class="num-btn">0</button>
+          <button class="num-btn space">&#x2E;</button>
+          <button class="num-btn space">&#x2012;</button>
+        </div>
+      </div>
+      <!-- clear -->
+      <div id="clear">
+        <br />
+        <input
+          type="button"
+          value="AC"
+          class="clear-buttons"
+          id="all-clear-button"
+        />
+
+        <br />
+        <br />
+        <input
+          type="button"
+          value="Clear"
+          class="clear-buttons"
+          id="clear-button"
+        />
+      </div>
+    </div>
+    <!-- options -->
+    <main id="options" class="hidden">
+      <button class="grid-item box-1">New Bill</button>
+      <button class="grid-item box-2" class="tender" data-price="2.00">
+        $2
+      </button>
+      <button class="grid-item box-3" class="tender" data-price="10.00">
+        $10
+      </button>
+      <button class="grid-item box-4">Open Cash Box</button>
+      <button class="grid-item box-5">Goods Return</button>
+      <button class="grid-item box-6">Cancel item</button>
+      <button class="grid-item box-7">Add item</button>
+      <button class="grid-item box-8">Price Amendment</button>
+      <button class="grid-item box-9">Terminate Transcation</button>
+      <button class="grid-item box-10">Print</button>
+      <button class="grid-item box-11">
+        <img src="button.png" alt="" style="height: 25px" />Bill
+      </button>
+      <button class="grid-item box-12" class="tender" data-price="5.00">
+        $5
+      </button>
+      <button class="grid-item box-13" class="tender" data-price="50.00">
+        $50
+      </button>
+      <button class="grid-item box-14">Gift Voucher</button>
+      <button class="grid-item box-15">Reserved Transcation</button>
+      <button class="grid-item box-16" onclick="deleteAllTransactions()">
+        Delete All Transcation
+      </button>
+      <button class="grid-item box-17">
+        <a href="index.html" class="main_menu">Main Menu</a>
+      </button>
+      <button class="grid-item box-18">Restore</button>
+      <!-- <div class="grid-item box-10">box-10</div> -->
+    </main>
+    <script src="pratice.js"></script>
+  </body>
+</html>
