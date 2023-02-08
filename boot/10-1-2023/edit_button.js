@@ -4,7 +4,7 @@ const sno = urlParams.get("sno");
 console.log(sno);
 const target = Number(sno);
 console.log(target);
-// getting the respectivee element from the localstorage and filter the value based on the target variable
+// getting the respective element from the localstorage and filter the value based on the target variable
 const products = JSON.parse(localStorage.getItem("product"));
 const filteredProduct = products.filter((item) => item.item_no === target);
 console.log(filteredProduct);
@@ -25,11 +25,18 @@ document.querySelector("#update_button").addEventListener("click", (event) => {
   //   setting the value to the getting_value variable
   getting_value[target - 1].item_name =
     document.querySelector("#item_name").value;
-  getting_value[target - 1].price = document.querySelector("#price").value;
-  getting_value[target - 1].purchased =
-    document.querySelector("#purchased").value;
-  getting_value[target - 1].sold = document.querySelector("#sold").value;
-  getting_value[target - 1].stock = document.querySelector("#in_stock").value;
+  getting_value[target - 1].price = Number(
+    document.querySelector("#price").value
+  );
+  getting_value[target - 1].purchased = Number(
+    document.querySelector("#purchased").value
+  );
+  getting_value[target - 1].sold = Number(
+    document.querySelector("#sold").value
+  );
+  getting_value[target - 1].stock = Number(
+    document.querySelector("#in_stock").value
+  );
   getting_value[target - 1].type = document.querySelector("#input_type").value;
   getting_value[target - 1].availability = document.querySelector(
     "#input_availability"

@@ -429,7 +429,7 @@ bill.addEventListener("click", () => {
  </tr>
 </table>
  </div>
-
+ <hr style="border: 2px solid black;margin-top:0;margin-bottom:0">
   <div>
   <table>
     <tr id="change_size">
@@ -439,6 +439,9 @@ bill.addEventListener("click", () => {
       )}</td>
     </tr>
   </table>
+  </div>
+  <hr style="border: 2px solid black;margin-top:0;margin-bottom:0">
+   <div>
   </div>
 
 <div>
@@ -517,7 +520,7 @@ function myproduct() {
       let item2 = getting_value[j];
       if (item1.item_name === item2.item_name) {
         // console.log(item1.sold_name);
-        item2.purchased = Number(item1.quantity);
+        item2.purchased = Number(item2.sold);
         // item2.purchased += item1.sold;
         break;
       }

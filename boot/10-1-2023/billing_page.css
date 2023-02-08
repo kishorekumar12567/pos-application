@@ -216,7 +216,7 @@ main {
   padding-right: 20px;
   padding-bottom: 5px;
   margin-top: 2px;
-  margin-left: 23px;
+  margin-left: 20px;
   padding-bottom: 10px;
   border-radius: 5px;
 }
@@ -253,14 +253,14 @@ main {
 }
 #down {
   background-color: #cacbd0;
-  width: 65px;
+  width: 67px;
   height: 40px;
   padding-top: 10px;
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 1px;
   margin-top: 5px;
-  margin-left: 25px;
+  margin-left: 21px;
   padding-bottom: 10px;
   border-radius: 5px;
 }
