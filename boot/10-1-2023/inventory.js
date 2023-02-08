@@ -451,10 +451,258 @@ timeOfSelect.addEventListener("change", function () {
     });
   } else if (this.value === "This Month") {
     console.log("This Month is selected");
+    table_body.innerHTML = ""; // Clear the previous data
+    let localStorageArray = JSON.parse(localStorage.getItem("product"));
+    let date = new Date();
+    let thisMonthStart = new Date(date.getFullYear(), date.getMonth(), 1);
+    let thisMonthEnd = new Date(date.getFullYear(), date.getMonth() + 1, 0);
+
+    let thisMonth = [];
+
+    for (
+      let i = thisMonthStart;
+      i <= thisMonthEnd;
+      i.setDate(i.getDate() + 1)
+    ) {
+      thisMonth.push(
+        i.getDate() + "-" + (i.getMonth() + 1) + "-" + i.getFullYear()
+      );
+    }
+    console.log(thisMonth);
+    let filtereddata = localStorageArray.filter((item) => {
+      return thisMonth.includes(item.created_date);
+    });
+    console.log(filtereddata);
+    filtereddata.forEach((item) => {
+      let tr = document.createElement("tr");
+
+      let td1 = document.createElement("td");
+      td1.innerHTML = item.item_no;
+      td1.setAttribute("id", "table_sno");
+      td1.setAttribute("class", "sorting_1");
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      td2.innerHTML = item.item_name;
+      td2.setAttribute("id", "table_item_name");
+      tr.appendChild(td2);
+
+      let td3 = document.createElement("td");
+      td3.innerHTML = item.price;
+      td3.setAttribute("id", "table_price");
+      tr.appendChild(td3);
+
+      let td4 = document.createElement("td");
+      td4.innerHTML = item.purchased;
+      td4.setAttribute("id", "table_purchased");
+      tr.appendChild(td4);
+
+      let td5 = document.createElement("td");
+      td5.innerHTML = item.sold;
+      td5.setAttribute("id", "table_sold");
+      tr.appendChild(td5);
+
+      let td6 = document.createElement("td");
+      td6.innerHTML = item.stock;
+      td6.setAttribute("id", "table_instock");
+      tr.appendChild(td6);
+
+      let td7 = document.createElement("td");
+      td7.innerHTML = item.type;
+      td7.setAttribute("id", "table_type");
+      tr.appendChild(td7);
+
+      let td8 = document.createElement("td");
+      td8.innerHTML = item.availability;
+      td8.setAttribute("id", "table_availability");
+      tr.appendChild(td8);
+
+      let td9 = document.createElement("td");
+      td9.setAttribute("id", "table_action");
+      td9.innerHTML = `
+      <img src="./images/delete.png" alt=""class="delete_button"srcset="" style="padding-left:30px; cursor:pointer">
+      <img src="./images/edit.png" alt="" class="edit_button"srcset=""style="padding-left:20px;cursor:pointer">
+      <img src="./images/file_review.png"data-bs-toggle="modal"id="review_button" class="review_button" data-bs-target="#viewbutton" alt="" width="45px" style="padding-left:20px;cursor:pointer">`;
+      tr.appendChild(td9);
+
+      table_body.appendChild(tr);
+    });
   } else if (this.value === "Last Month") {
     console.log("Last Month is selected");
+    let date = new Date();
+    let lastMonthStart = new Date(date.getFullYear(), date.getMonth() - 1, 1);
+    let lastMonthEnd = new Date(date.getFullYear(), date.getMonth(), 0);
+
+    let lastMonth = [];
+
+    for (
+      let i = lastMonthStart;
+      i <= lastMonthEnd;
+      i.setDate(i.getDate() + 1)
+    ) {
+      lastMonth.push(
+        i.getDate() + "-" + (i.getMonth() + 1) + "-" + i.getFullYear()
+      );
+    }
+    console.log(lastMonth);
+    table_body.innerHTML = ""; // Clear the previous data
+    let localStorageArray = JSON.parse(localStorage.getItem("product"));
+    let filtereddata = localStorageArray.filter((item) => {
+      return lastMonth.includes(item.created_date);
+    });
+    console.log(filtereddata);
+    filtereddata.forEach((item) => {
+      let tr = document.createElement("tr");
+
+      let td1 = document.createElement("td");
+      td1.innerHTML = item.item_no;
+      td1.setAttribute("id", "table_sno");
+      td1.setAttribute("class", "sorting_1");
+      tr.appendChild(td1);
+
+      let td2 = document.createElement("td");
+      td2.innerHTML = item.item_name;
+      td2.setAttribute("id", "table_item_name");
+      tr.appendChild(td2);
+
+      let td3 = document.createElement("td");
+      td3.innerHTML = item.price;
+      td3.setAttribute("id", "table_price");
+      tr.appendChild(td3);
+
+      let td4 = document.createElement("td");
+      td4.innerHTML = item.purchased;
+      td4.setAttribute("id", "table_purchased");
+      tr.appendChild(td4);
+
+      let td5 = document.createElement("td");
+      td5.innerHTML = item.sold;
+      td5.setAttribute("id", "table_sold");
+      tr.appendChild(td5);
+
+      let td6 = document.createElement("td");
+      td6.innerHTML = item.stock;
+      td6.setAttribute("id", "table_instock");
+      tr.appendChild(td6);
+
+      let td7 = document.createElement("td");
+      td7.innerHTML = item.type;
+      td7.setAttribute("id", "table_type");
+      tr.appendChild(td7);
+
+      let td8 = document.createElement("td");
+      td8.innerHTML = item.availability;
+      td8.setAttribute("id", "table_availability");
+      tr.appendChild(td8);
+
+      let td9 = document.createElement("td");
+      td9.setAttribute("id", "table_action");
+      td9.innerHTML = `
+      <img src="./images/delete.png" alt=""class="delete_button"srcset="" style="padding-left:30px; cursor:pointer">
+      <img src="./images/edit.png" alt="" class="edit_button"srcset=""style="padding-left:20px;cursor:pointer">
+      <img src="./images/file_review.png"data-bs-toggle="modal"id="review_button" class="review_button" data-bs-target="#viewbutton" alt="" width="45px" style="padding-left:20px;cursor:pointer">`;
+      tr.appendChild(td9);
+
+      table_body.appendChild(tr);
+    });
   } else if (this.value === "Custom") {
     console.log("Custom is selected");
+    const fromInput = document.getElementById("from");
+    const toInput = document.getElementById("to");
+
+    let selectedFrom;
+    let selectedTo;
+
+    fromInput.addEventListener("change", function () {
+      selectedFrom = fromInput.value;
+    });
+
+    toInput.addEventListener("change", function () {
+      selectedTo = toInput.value;
+      console.log(selectedFrom, selectedTo);
+      const formatDate = (date) => {
+        const [day, month, year] = new Intl.DateTimeFormat("en-GB", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        })
+          .format(date)
+          .split("/");
+
+        return `${+day.startsWith("0") ? day.slice(1) : day}-${
+          +month.startsWith("0") ? month.slice(1) : month
+        }-${year}`;
+      };
+
+      const selectedFromDates = [];
+      if (selectedFrom && selectedTo) {
+        const start = new Date(selectedFrom);
+        const end = new Date(selectedTo);
+        for (let d = start; d <= end; d.setDate(d.getDate() + 1)) {
+          selectedFromDates.push(formatDate(d));
+        }
+      }
+      console.log(selectedFromDates);
+      let localStorageArray = JSON.parse(localStorage.getItem("product"));
+      filtereddata = localStorageArray.filter((item) => {
+        return selectedFromDates.includes(item.created_date);
+      });
+      console.log(filtereddata);
+      table_body.innerHTML = "";
+      filtereddata.forEach((item) => {
+        let tr = document.createElement("tr");
+
+        let td1 = document.createElement("td");
+        td1.innerHTML = item.item_no;
+        td1.setAttribute("id", "table_sno");
+        td1.setAttribute("class", "sorting_1");
+        tr.appendChild(td1);
+
+        let td2 = document.createElement("td");
+        td2.innerHTML = item.item_name;
+        td2.setAttribute("id", "table_item_name");
+        tr.appendChild(td2);
+
+        let td3 = document.createElement("td");
+        td3.innerHTML = item.price;
+        td3.setAttribute("id", "table_price");
+        tr.appendChild(td3);
+
+        let td4 = document.createElement("td");
+        td4.innerHTML = item.purchased;
+        td4.setAttribute("id", "table_purchased");
+        tr.appendChild(td4);
+
+        let td5 = document.createElement("td");
+        td5.innerHTML = item.sold;
+        td5.setAttribute("id", "table_sold");
+        tr.appendChild(td5);
+
+        let td6 = document.createElement("td");
+        td6.innerHTML = item.stock;
+        td6.setAttribute("id", "table_instock");
+        tr.appendChild(td6);
+
+        let td7 = document.createElement("td");
+        td7.innerHTML = item.type;
+        td7.setAttribute("id", "table_type");
+        tr.appendChild(td7);
+
+        let td8 = document.createElement("td");
+        td8.innerHTML = item.availability;
+        td8.setAttribute("id", "table_availability");
+        tr.appendChild(td8);
+
+        let td9 = document.createElement("td");
+        td9.setAttribute("id", "table_action");
+        td9.innerHTML = `
+        <img src="./images/delete.png" alt=""class="delete_button"srcset="" style="padding-left:30px; cursor:pointer">
+        <img src="./images/edit.png" alt="" class="edit_button"srcset=""style="padding-left:20px;cursor:pointer">
+        <img src="./images/file_review.png"data-bs-toggle="modal"id="review_button" class="review_button" data-bs-target="#viewbutton" alt="" width="45px" style="padding-left:20px;cursor:pointer">`;
+        tr.appendChild(td9);
+
+        table_body.appendChild(tr);
+      });
+    });
   }
 });
-// });
