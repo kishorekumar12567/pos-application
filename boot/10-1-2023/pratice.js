@@ -22,6 +22,18 @@ document.addEventListener("DOMContentLoaded", () => {
       let drinks = getting_value.filter((item) => item.type === "drinks");
       let snacks = getting_value.filter((item) => item.type === "snacks");
       console.log(drinks, snacks);
+
+      // here the below code will dynamically add the respective tr and td element in the table element
+      let table = document.querySelector("#snack-list table");
+
+      for (let i = 0; i < snacks.length; i++) {
+        let row = document.createElement("tr");
+        let cell = document.createElement("td");
+        cell.classList.add("drink");
+        row.appendChild(cell);
+        table.appendChild(row);
+      }
+
       //   here the 24 representing the number of drinks shown in the webpage
       for (let i = 0; i < drinks.length; i++) {
         // getting the corresponding value from the object and store it in the variable

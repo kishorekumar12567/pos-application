@@ -481,6 +481,13 @@ table {
   margin-left: 8px;
 }
 /* images */
+#images::-webkit-scrollbar {
+  display: none;
+}
+#images {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
 #images table {
   margin-left: 10px;
 }

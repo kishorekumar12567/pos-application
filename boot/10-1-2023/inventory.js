@@ -56,45 +56,48 @@ table_body.addEventListener("click", function (event) {
     // Get the item name from the tr element
     const itemName = row.querySelector("#table_item_name").textContent;
 
-    // Remove the row from the table
-    row.remove();
+    // Show a confirmation prompt
+    if (confirm("Are you sure you want to delete " + itemName + "?")) {
+      // Remove the row from the table
+      row.remove();
 
-    // Remove the corresponding data from local storage
-    const products = JSON.parse(localStorage.getItem("product"));
-    const updatedProducts = products.filter(
-      (product) => product.item_name !== itemName
-    );
-    localStorage.setItem("product", JSON.stringify(updatedProducts));
-    var num_product = JSON.parse(localStorage.getItem("product"));
-    for (let i = 0; i < num_product.length; i++) {
-      num_product[i].item_no = i + 1;
+      // Remove the corresponding data from local storage
+      const products = JSON.parse(localStorage.getItem("product"));
+      const updatedProducts = products.filter(
+        (product) => product.item_name !== itemName
+      );
+      localStorage.setItem("product", JSON.stringify(updatedProducts));
+      var num_product = JSON.parse(localStorage.getItem("product"));
+      for (let i = 0; i < num_product.length; i++) {
+        num_product[i].item_no = i + 1;
+      }
+      localStorage.setItem("product", JSON.stringify(num_product));
+      let table = document.getElementById("table");
+      let tbody = table.getElementsByTagName("tbody")[0];
+      tbody.innerHTML = "";
+      // resetting the value
+      var resetdate = JSON.parse(localStorage.getItem("product"));
+      let template = "";
+      for (let i = 0; i < resetdate.length; i++) {
+        let temp = resetdate[i];
+        template += `
+            <tr>
+            <td id="table_sno">${i + 1}</td>
+            <td id="table_item_name">${temp.item_name}</td>
+            <td id="table_price">${temp.price}</td>
+            <td id="table_purchased">${temp.purchased}</td>
+            <td id="table_sold">${temp.sold}</td>
+            <td id="table_instock">${temp.stock}</td>
+            <td id="table_type">${temp.type}</td>
+            <td id="table_availability">${temp.availability}</td>
+            <td id="table_action">
+            <img src="./images/delete.png" alt="" class="delete_button"srcset="" style="padding-left:30px; cursor:pointer">
+            <a href="edit_button.html"> <img src="./images/edit.png" class="edit_button" alt="" srcset="" style="padding-left:20px;cursor:pointer"></a>
+            <img src="./images/file_review.png" data-bs-toggle="modal" id="review_button"  class="review_button" data-bs-target="#viewbutton" alt="" width="45px" style="padding-left:20px;cursor:pointer"></td>
+            </tr>`;
+      }
+      table_data.innerHTML += template;
     }
-    localStorage.setItem("product", JSON.stringify(num_product));
-    let table = document.getElementById("table");
-    let tbody = table.getElementsByTagName("tbody")[0];
-    tbody.innerHTML = "";
-    // resetting the value
-    var resetdate = JSON.parse(localStorage.getItem("product"));
-    let template = "";
-    for (let i = 0; i < resetdate.length; i++) {
-      let temp = resetdate[i];
-      template += `
-          <tr>
-          <td id="table_sno">${i + 1}</td>
-          <td id="table_item_name">${temp.item_name}</td>
-          <td id="table_price">${temp.price}</td>
-          <td id="table_purchased">${temp.purchased}</td>
-          <td id="table_sold">${temp.sold}</td>
-          <td id="table_instock">${temp.stock}</td>
-          <td id="table_type">${temp.type}</td>
-          <td id="table_availability">${temp.availability}</td>
-          <td id="table_action">
-          <img src="./images/delete.png" alt="" class="delete_button"srcset="" style="padding-left:30px; cursor:pointer">
-          <a href="edit_button.html"> <img src="./images/edit.png" class="edit_button" alt="" srcset="" style="padding-left:20px;cursor:pointer"></a>
-          <img src="./images/file_review.png" data-bs-toggle="modal" id="review_button"  class="review_button" data-bs-target="#viewbutton" alt="" width="45px" style="padding-left:20px;cursor:pointer"></td>
-          </tr>`;
-    }
-    table_data.innerHTML += template;
   } else if (event.target.classList.contains("edit_button")) {
     console.log("edit clicked");
     const tbody = document.querySelector("#table tbody");
@@ -108,35 +111,27 @@ table_body.addEventListener("click", function (event) {
     console.log("hello kk");
     const targ = event.target.parentNode.parentNode;
     console.log(targ);
-    document.querySelector("#s_no").value =
+    document.querySelector("#s_no").innerText =
       targ.querySelector("#table_sno").innerText;
-    document.querySelector("#item_name_kk").value =
+    document.querySelector("#item_name_kk").innerText =
       targ.querySelector("#table_item_name").innerText;
-    document.querySelector("#input_price").value =
+    document.querySelector("#input_price").innerText =
       targ.querySelector("#table_price").innerText;
-    document.querySelector("#input_purchased_kk").value =
+    document.querySelector("#input_purchased_kk").innerText =
       targ.querySelector("#table_purchased").innerText;
-    document.querySelector("#input_sold_kk").value =
+    document.querySelector("#input_sold_kk").innerText =
       targ.querySelector("#table_sold").innerText;
-    document.querySelector("#input_instock").value =
+    document.querySelector("#input_instock").innerText =
       targ.querySelector("#table_instock").innerText;
     // type drop down
     const table_value_type = document.querySelector("#table_type").innerText;
-    const value_type = document.querySelector("#input_type");
-    value_type.innerHTML = "";
-    var options = "";
-    options += `<option value="${table_value_type}">${table_value_type}</option>`;
-    value_type.innerHTML += options;
+    document.querySelector("#input_type").innerText = table_value_type;
     // availability drop down
     const availability = document.querySelector(
       "#table_availability"
     ).innerText;
     console.log(availability);
-    const value_availability = document.querySelector("#input_availability");
-    value_availability.innerHTML = "";
-    var options = "";
-    options += `<option value="${availability}}">${availability}</option>`;
-    value_availability.innerHTML += options;
+    document.querySelector("#input_availability").innerText = availability;
   }
 });
 // setting the function for the filter options
