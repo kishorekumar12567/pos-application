@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="edit_button.css" />
+    <title>Add_button</title>
+  </head>
+  <body>
+    <div id="header">
+      <p>Edit Item</p>
+    </div>
+    <div id="content">
+      <table>
+        <tr>
+          <td><label for="item_name" class="left_item">Item Name</label></td>
+          <td><input type="text" class="input" id="item_name" /></td>
+          <td class="right_item"><label for="Price">Price</label></td>
+          <td><input type="text" class="input" id="price" /></td>
+        </tr>
+        <tr>
+          <td><label for="Purchased" class="left_item">Purchased</label></td>
+          <td><input type="text" class="input" id="purchased" /></td>
+          <td class="right_item"><label for="Sold">Sold</label></td>
+          <td><input type="text" class="input" id="sold" /></td>
+        </tr>
+        <tr>
+          <td><label for="In Stock" class="left_item">In Stock</label></td>
+          <td><input type="text" class="input" id="in_stock" /></td>
+          <td class="right_item"><label for="Type">Type</label></td>
+          <td>
+            <select name="cars" id="input_type" class="input type">
+              <option value="drinks">drinks</option>
+              <option value="snacks">snacks</option>
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td><label for="Price" class="left_item">Availability</label></td>
+          <td>
+            <select
+              name="cars"
+              id="input_availability"
+              class="input availability"
+            >
+              <option value="yes">yes</option>
+              <option value="no">no</option>
+            </select>
+          </td>
+          <td></td>
+          <td class="right_item buttons">
+            <input
+              type="button"
+              value="Update"
+              id="update_button"
+              class="add_button"
+            />
+            <a href="inventory.html">
+              <input type="button" value="Cancel" class="cancel_button" />
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="edit_button.js"></script>
+  </body>
+</html>

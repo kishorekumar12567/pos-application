@@ -1,0 +1,68 @@
+body {
+  background-color: #aaa8a9;
+  font-family: sans-serif;
+}
+#header {
+  font-family: sans-serif;
+  font-size: 30px;
+  font-weight: lighter;
+  text-align: center;
+}
+#header p {
+  margin-top: 0;
+}
+#content {
+  width: 65%;
+  margin-left: auto;
+  margin-right: auto;
+  display: inline-block;
+  padding-left: 340px;
+  margin-top: 50px;
+}
+.input {
+  padding: 14px;
+  padding-right: 100px;
+  border-radius: 4px;
+  font-size: 20px;
+  border: none;
+}
+#content table tr td {
+  padding-bottom: 30px;
+  font-size: 20px;
+}
+.right_item {
+  width: 100px;
+  padding-left: 50px;
+}
+.left_item {
+  margin-right: 70px;
+}
+.add_button {
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: #29a83f;
+  color: white;
+}
+.cancel_button {
+  padding: 15px;
+  font-size: 20px;
+  border-radius: 3px;
+  border: none;
+  cursor: pointer;
+  background-color: red;
+  color: white;
+}
+.availability {
+  width: 360px;
+}
+.type {
+  width: 360px;
+}
+.buttons {
+  padding-left: 0;
+}

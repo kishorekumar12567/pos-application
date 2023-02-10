@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="inventory.css">
+  <title>Document</title>
+  <!-- jquery and the jquery datatable CDN -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.js"></script>
+<!-- bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+</head>
+<body>
+  
+  <div id="header">
+    <a href="index.html"><img src="./images/home_icon.png" alt="home_icon"></a>
+    <span class="heading">
+      Inventory
+    </span>
+  </div>
+  
+  <div id="date">
+      <label for="date" class="date_name">Filter By:</label>
+
+      <select name="date" class="option" id="time_of_select">
+        <option value="select">--Select--</option>
+        <option value="Today">Today</option>
+        <option value="Yesterday">Yesterday</option>
+        <option value="This Week">This Week</option>
+        <option value="Last Week">Last Week</option>
+        <option value="This Month">This Month</option>
+        <option value="Last Month">Last Month</option>
+        <option value="Custom">Custom</option>
+      </select>
+      <label for="from" class="date_name">From</label>
+      <input type="date" name="" id="from" class="option" disabled/>
+      <label for="To" class="date_name">To</label>
+      <input type="date" name="" class="option"id="to" disabled />
+      <a href="add_button.html"> <input type="button" value="Add Product" id="add_button"></input></a>
+  </div>
+  <!-- Modal -->
+<!-- view button -->
+<form>
+  <div class="modal fade" id="viewbutton" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog " role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Inventory</h5>
+          <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="form-group">
+            <label for="text" class="form-label ">S.No</label>
+            <label id="s_no" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label ">Item Name</label>
+            <label id="item_name_kk" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label " >Price</label>
+            <label id="input_price" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label ">Purchased</label>
+            <label id="input_purchased_kk" class="form-control my-1" ></label>
+          </div> 
+          <div class="form-group">
+            <label for="text" class="form-label ">Sold</label>
+            <label id="input_sold_kk" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label ">In Stock</label>
+            <label id="input_instock" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label " style="margin-bottom: 8px;">Type</label>
+            <label id="input_type" class="form-control my-1" ></label>
+          </div>
+          <div class="form-group">
+            <label for="text" class="form-label " style="margin-bottom: 8px;">Availability</label>
+            <label id="input_availability" class="form-control my-1" ></label>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</form>
+
+<div class="indicator">
+    <table id="table">
+      <thead>
+        <tr>
+          <td>S.no</td>
+          <td >Item Name</td>
+          <td >Price</td>
+          <td >Purchased</td>
+          <td >Sold</td>
+          <td >in Stock</td>
+          <td >Type</td>
+          <td >Availability</td>
+          <td >Action</td>
+        </tr>
+      </thead>
+      <tbody>
+<!-- the data will add here dynamically -->
+      </tbody>
+    </table>
+  </div>
+  <script src="inventory.js"></script>
+</body>
+</html>

@@ -1,0 +1,100 @@
+body {
+  background-color: #d1d1d1 !important;
+  font-family: sans-serif !important;
+}
+#header img {
+  /* border: 1px solid black; */
+  padding: 7px !important;
+  background-color: #048bff !important;
+  border-radius: 5px !important;
+  margin-top: 30px !important;
+  margin-left: 30px !important;
+  cursor: pointer !important;
+}
+#header span {
+  font-size: 35px !important;
+  margin-left: 800px !important;
+  font-family: sans-serif !important;
+  font-weight: lighter !important;
+}
+#add_button {
+  cursor: pointer !important;
+  display: inline !important;
+  float: right !important;
+  width: 6% !important;
+  background-color: white !important;
+  padding: 8px !important;
+  border-radius: 5px !important;
+}
+#date {
+  width: 97% !important;
+  /* border: 1px solid black; */
+  text-align: center !important;
+  margin-top: 10px !important;
+}
+.option {
+  font-size: 16px;
+  padding: 3px;
+  border-radius: 3px;
+}
+.date_name {
+  font-size: 16px;
+  font-family: sans-serif;
+}
+.indicator {
+  /* border: 1px solid black; */
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 10px;
+}
+.indicator table tr td {
+  /* border: 1px solid black; */
+  width: 5%;
+  font-size: 20px;
+  padding: 5px;
+}
+#table {
+  /* border: 1px solid black; */
+  width: 95%;
+  margin-left: auto;
+  margin-right: auto;
+}
+#table tbody tr td {
+  /* border: 1px solid black; */
+  /* width: 13%; */
+  font-size: 20px;
+  padding: 5px;
+}
+#table_sno {
+  /* color: red; */
+  width: 194px;
+}
+#table_item_name {
+  width: 194px;
+}
+#table_price {
+  width: 194px;
+}
+#table_purchased {
+  width: 194px;
+}
+#table_sold {
+  width: 194px;
+}
+
+#table_instock {
+  width: 194px;
+}
+#table_type {
+  width: 194px;
+}
+#table_availability {
+  width: 200px;
+}
+#table_action {
+  width: 194px;
+}
+#table tbody tr:nth-child(odd) {
+  background-color: white;
+}

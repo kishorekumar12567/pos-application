@@ -1,0 +1,560 @@
+/* main button css */
+body {
+  font-family: sans-serif;
+  display: grid;
+  grid-template-areas:
+    "price snacks images"
+    "values snacks images"
+    "content snacks images"
+    "display snacks images"
+    "calculation options options";
+  grid-template-columns: 5fr 130px 5fr;
+  grid-template-rows: 30px 40px 460px 95px 260px;
+  gap: 2px;
+}
+#price {
+  grid-area: price;
+}
+#content {
+  grid-area: content;
+}
+#snacks {
+  grid-area: snacks;
+}
+#images {
+  grid-area: images;
+}
+#calculation {
+  grid-area: calculation;
+}
+#options {
+  grid-area: options;
+}
+#display {
+  grid-area: display;
+}
+#values {
+  grid-area: values;
+}
+
+/* options (or) button */
+main {
+  height: 600px;
+  display: grid;
+  grid-template-areas:
+    "new_bill two ten open_cash_box goods_return cancel_item add_item"
+    "price_amendment two ten terminate_transaction print cancel_item add_item"
+    "bill five fifty gift_voucher reserved_transcation delete_all_transcation main_menu"
+    "bill five fifty gift_voucher restore delete_all_transcation main_menu";
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 52px 52px 52px 52px;
+  gap: 5px;
+  background-color: #aeefa7;
+  border-radius: 3px;
+  padding: 10px;
+
+  /* grid-auto-flow: column; */
+}
+.grid-item {
+  border: 1px solid black;
+  border-radius: 5px;
+  cursor: pointer;
+  /* text-align: center; */
+}
+.box-1 {
+  grid-area: new_bill;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-2 {
+  grid-area: two;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-3 {
+  grid-area: ten;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-4 {
+  grid-area: open_cash_box;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-5 {
+  grid-area: goods_return;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-6 {
+  grid-area: cancel_item;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-7 {
+  grid-area: add_item;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-8 {
+  grid-area: price_amendment;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-9 {
+  grid-area: terminate_transaction;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box-10 {
+  grid-area: print;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-11 {
+  grid-area: bill;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-12 {
+  grid-area: five;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-13 {
+  grid-area: fifty;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-14 {
+  grid-area: gift_voucher;
+  background-color: #ff9703;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box-15 {
+  grid-area: reserved_transcation;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box-16 {
+  grid-area: delete_all_transcation;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.box-17 {
+  grid-area: main_menu;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main_menu {
+  text-decoration: none;
+  color: white;
+}
+.box-18 {
+  grid-area: restore;
+  background-color: #1fce1f;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+#options {
+  height: 230px;
+  color: white;
+}
+.grid-item {
+  color: white;
+  font-family: sans-serif;
+  font-size: 16px;
+}
+/* snacks */
+#snacks {
+  background-color: #d8e1ff;
+}
+#up {
+  background-color: #cacbd0;
+  width: 48px;
+  height: 34px;
+  padding: 15px;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 5px;
+  margin-top: 2px;
+  margin-left: 20px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+#down {
+  width: 60px;
+  height: 60px;
+}
+.snack-item {
+  background-color: #5981f5;
+  border: none;
+  margin-top: 3px;
+  padding-top: 15px;
+  padding-bottom: 18px;
+  padding-left: 2px;
+  /* padding: right 2px; */
+  margin-bottom: 7px;
+  width: 85px;
+  height: 20px;
+  margin-left: 22px;
+  text-align: center;
+  border-radius: 5px;
+  border: 1px solid white;
+  font-family: sans-serif;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+#snack-list {
+  overflow-y: scroll;
+  height: 494px;
+}
+.snack-list::-webkit-scrollbar {
+  display: none;
+}
+#down {
+  background-color: #cacbd0;
+  width: 67px;
+  height: 40px;
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 1px;
+  margin-top: 5px;
+  margin-left: 21px;
+  padding-bottom: 10px;
+  border-radius: 5px;
+}
+/* price */
+#price {
+  color: #555555;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: x-large;
+  padding-left: 5px;
+  padding-top: 5px;
+  padding-bottom: 30px;
+  border: 3px solid black;
+  border-radius: 4px;
+  margin-top: -8px;
+  margin-left: -8px;
+}
+/* values */
+table {
+  margin-left: -5px;
+}
+#values table,
+#values tr,
+#values th {
+  width: 900px;
+  font-weight: bold;
+  font-size: large;
+  color: #333333;
+  font-family: sans-serif;
+  background-color: #eaedf7;
+  padding-left: 5px;
+  padding-top: 9px;
+}
+#content table tr td {
+  /* border: 1px solid black; */
+  width: 25%;
+}
+.table-item {
+  text-align: left;
+}
+.table-quantity,
+.table-unitprice,
+.table-totalprice {
+  text-align: right;
+  padding-right: 0px;
+}
+.table-quantities {
+  text-align: right;
+}
+.table-unitprices {
+  text-align: right;
+  width: 130px;
+  padding-left: 20px;
+}
+.table-totalprice {
+  width: 20px;
+  padding-left: 160px;
+}
+
+/* display */
+#display {
+  display: flex;
+  gap: 30px;
+}
+#item-number {
+  color: #0000ff;
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+#input-item-number {
+  margin-top: 5px;
+  height: 40px;
+  border-radius: 3px;
+  border: 2px solid #d5d5d5;
+  width: 320px;
+  font-size: 20px;
+}
+#quantity {
+  color: #0000ff;
+  font-family: sans-serif;
+  margin: 0;
+  font-weight: bold;
+  font-size: 20px;
+  margin-left: 13px;
+}
+#input-quantity {
+  margin-top: 5px;
+  width: 280px;
+  height: 40px;
+  font-size: 20px;
+  border-radius: 3px;
+  border: 2px solid #d5d5d5;
+  margin-left: 13px;
+}
+#display-add {
+  font-family: sans-serif;
+  font-size: 20px;
+  margin-top: 29px;
+  padding: 10px;
+  background-color: #048bff;
+  border: 1px solid black;
+  color: white;
+  border-radius: 3px;
+  cursor: pointer;
+}
+/* calculation */
+/* overall */
+#calculation {
+  display: inline-flex;
+
+  margin-left: -5px;
+}
+
+/* language */
+#language {
+  width: 160px;
+}
+#numbers {
+  width: 250px;
+  margin-left: 20px;
+}
+#clear {
+  width: 200px;
+}
+#clc-language {
+  width: 50px;
+}
+#calc-language-lan {
+  font-family: sans-serif;
+  padding: 8px;
+  background-color: #048bff;
+  border: 1px soid black;
+  border-radius: 3px;
+  font-size: 16px;
+  color: white;
+  cursor: pointer;
+}
+#calc-language-table {
+  margin-left: 15px;
+  font-size: 17px;
+  font-family: sans-serif;
+  color: #530d63;
+  font-weight: bold;
+}
+#calc-language-in1 {
+  margin-top: 6px;
+  width: 80px;
+  height: 35px;
+  font-size: 17px;
+  border: 2px solid #d5d5d5;
+  border-radius: 3px;
+}
+#calc-language-cover {
+  margin-left: 0;
+  font-size: 17px;
+  font-family: sans-serif;
+  color: #530d63;
+  font-weight: bold;
+}
+#calc-language-in2 {
+  margin-top: 6px;
+  width: 80px;
+  height: 35px;
+  font-size: 17px;
+  border: 2px solid #d5d5d5;
+  border-radius: 3px;
+}
+/* clear*/
+#clear {
+  margin-left: 40px;
+}
+#all-clear-button {
+  cursor: pointer;
+}
+.clear-buttons {
+  background-color: #048bff;
+  padding: 37px;
+  border-radius: 4px;
+  border: 1px solid black;
+  color: white;
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: large;
+  text-align: center;
+  width: 100px;
+}
+#clear-button {
+  padding-left: 20px;
+  cursor: pointer;
+}
+/* numbers */
+.num-btn {
+  padding-left: 13px;
+  /* padding-bottom: 13px; */
+  padding-right: 10px;
+  padding-top: 15px;
+  width: 60px;
+  background-color: #048bff;
+  border: 1px solid black;
+  border-radius: 3px;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+#num-div2 {
+  margin-top: 15px;
+}
+#num-div3 {
+  margin-top: 15px;
+}
+#num-div4 {
+  margin-top: 15px;
+}
+.space {
+  margin-left: 8px;
+}
+/* images */
+#images::-webkit-scrollbar {
+  display: none;
+}
+#images {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+#images table {
+  margin-left: 10px;
+}
+#images table tr td {
+  padding-top: 3px;
+  text-align: center;
+  border: 1px solid #048bff;
+  cursor: pointer;
+}
+#images table tr td p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+#images table tr td img {
+  width: 200px;
+  height: 75px;
+}
+
+/* In the js inserting the values in the class */
+.styles {
+  font-weight: lighter;
+  line-height: 30px;
+}
+/* solving the overflow problem in the bill section */
+#content {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+#content::-webkit-scrollbar {
+  display: none;
+}
+#tprice {
+  padding-right: 25px;
+}
+#content table,
+#content tr,
+#content th {
+  width: 900px;
+  font-weight: bold;
+  font-size: large;
+  color: #333333;
+  font-family: sans-serif;
+  background-color: #eaedf7;
+  padding-left: 5px;
+  padding-top: 9px;
+}
+/* adding the new billing div in the content */
+#content tr td {
+  /* border: 1px solid black; */
+  padding-bottom: 10px;
+  padding-bottom: 10px;
+}
+.light {
+  text-align: right;
+  padding-right: 30px;
+  font-weight: lighter;
+}
+#change_size td {
+  color: brown;
+}
+#tender_table td {
+  color: #0000ff;
+}
+#payable {
+  font-weight: bold;
+  font-size: x-large;
+}
+#billing {
+  margin-top: -15px;
+}
